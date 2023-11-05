@@ -38,8 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_crontab',
     # our apps
     'home',
+]
+
+
+CRONJOBS = [
+    # Example: run every 5 minutes
+    ('*/5 * * * *', 'utils.tasks.send_scheduled_emails'),
 ]
 
 MIDDLEWARE = [
